@@ -19,3 +19,8 @@ NODE_ENV = "development"
 ```
 
 > You should change the data for your working databases and secure hashes
+
+## To-do-list
+
+- [ ] Feature X;
+- [ ] Feature Y.
