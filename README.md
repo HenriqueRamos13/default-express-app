@@ -22,5 +22,7 @@ NODE_ENV = "development"
 
 ## To-do-list
 
-- [ ] Feature X;
-- [ ] Feature Y.
+- [ ] Add Amazon Cloud Storage (An default image upload);
+- [ ] Add Google Cloud Storage (An default image upload).
+- [ ] Add Swagger.
+- [ ] Add New Relic.
