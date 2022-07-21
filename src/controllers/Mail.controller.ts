@@ -11,4 +11,4 @@ class MailController {
   }
 }
 
-export default new MailController();
+export default MailController;

@@ -14,8 +14,8 @@ class SessionController {
 
   @Public()
   public post(req: Request, res: Response, next): void {
-    return PassportController.signWithLocalStrategy(req, res, next);
+    return new PassportController().signWithLocalStrategy(req, res, next);
   }
 }
 
-export default new SessionController();
+export default SessionController;

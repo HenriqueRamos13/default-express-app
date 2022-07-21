@@ -48,4 +48,4 @@ class PassportController {
   }
 }
 
-export default new PassportController();
+export default PassportController;

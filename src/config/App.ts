@@ -9,11 +9,12 @@ import { Sanitize } from "../utils/functions/sanitize";
 import rateLimit from "express-rate-limit";
 import Mongo from "./db/Mongo";
 import { AuthMiddleware } from "../utils/middlewares/auth";
-import SessionRoute from "../routes/Session.route";
-import AuthRoute from "../routes/Auth.route";
 import TEXTS from "../utils/Texts";
-import MailRoute from "../routes/Mail.route";
 import "dotenv/config";
+import AuthController from "../controllers/Auth.controller";
+import MailController from "../controllers/Mail.controller";
+import SessionController from "../controllers/Session.controller";
+import { route } from "../utils/decorators/Route.decorator";
 
 class App {
   public app: express.Application;
@@ -39,9 +40,10 @@ class App {
   private configRoutes(): void {
     console.log("Configuring routes...");
 
-    this.app.use(AuthRoute);
-    this.app.use(SessionRoute);
-    this.app.use(MailRoute);
+    new AuthController();
+    new MailController();
+    new SessionController();
+    this.app.use(route);
   }
 
   private configureCors(): void {
@@ -112,4 +114,6 @@ class App {
   }
 }
 
-export default App;
+const app = new App();
+
+export default app;
